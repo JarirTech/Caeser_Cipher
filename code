@@ -12,5 +12,17 @@ def encrypt(plain_text, shift_number):
         new_letter = alphabet[new_position]
         code += new_letter
     print(f"the encoded message is: {code}")
-encrypt(text, shift)
+def decrypt(coded_text, shift_number):
+    plain_text=""
+    for letter in coded_text:
+        position = alphabet.index(letter)
+        new_position = position - shift_number
+        plain_text += alphabet[new_position]
+    print(f"the decoded message is: {plain_text}")
+if direction == 'encode':
+    encrypt(text, shift)
+elif direction == 'decode':
+    decrypt(text, shift)
+else:
+    print("try to enter 'encode' or 'decode'")
 
